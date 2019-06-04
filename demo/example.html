@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Just Test</title>
+   <style>
+   html,body{
+		background:#eee;
+   }
+   body{
+	   margin:0;
+	   padding:0;
+	   min-width:800px;
+   }
+   .section{
+		width:50%;
+		margin:10px auto;
+		background:#fff;
+		padding:1em;
+   }
+	.title{
+		font-size:20px;
+		font-weight:bold;
+		text-align:left;
+		color:#4284f3;
+		padding-bottom:20px;
+	}
+
+   </style>
+
+</head>
+<body>
+<div class="page">
+	<div class="section">
+		<div class="title">Basic usage1</div>
+		<pre>
+		new Prom(function(resolve,reject){
+			setTimeout(function(){
+				resolve('A');
+			},2000)
+		}).then(function(data){
+			alert('success:'+data)
+		}).catch(function(data){
+			alert('fail:'+data)
+		})
+		</pre>
+		<div>
+			<button onclick="baseTest()">Try it</button>
+		</div>
+	</div>
+	<div class="section">
+		<div class="title">Basic usage2</div>
+		<pre>
+		new Prom(function(resolve,reject){
+			setTimeout(function(){
+				reject('A');
+			},2000)
+		}).then(function(data){
+			alert('success:'+data)
+		}).catch(function(data){
+			alert('fail:'+data)
+		})
+		</pre>
+		<div>
+			<button onclick="baseTest2()">Try it</button>
+		</div>
+	</div>
+	<div class="section">
+		<div class="title">Prom.all usage</div>
+		<pre>
+		function task1(){
+			return new Prom(function(resolve,reject){
+				setTimeout(function(){
+					resolve('A');
+				},2000)
+			})
+		}
+		function task2(){
+			return new Prom(function(resolve,reject){
+				setTimeout(function(){
+					resolve('B');
+				},3000)
+			})
+		}
+		function task3(){
+			return new Prom(function(resolve,reject){
+				setTimeout(function(){
+					resolve('C');
+				},4000)
+			})
+		}
+		Prom.all([task1(),task2(),task3()]).then(function(dataList){
+			alert(dataList)
+		}).catch(function(data){
+			alert(data)
+		})
+		</pre>
+		<div>
+			<button onclick="baseTest3()">Try it</button>
+		</div>
+	</div>
+	<div class="section">
+		<div class="title">Prom.race usage</div>
+		<pre>
+		function task1(){
+			return new Prom(function(resolve,reject){
+				setTimeout(function(){
+					resolve('A');
+				},2000)
+			})
+		}
+		function task2(){
+			return new Prom(function(resolve,reject){
+				setTimeout(function(){
+					resolve('B');
+				},3000)
+			})
+		}
+		function task3(){
+			return new Prom(function(resolve,reject){
+				setTimeout(function(){
+					resolve('C');
+				},4000)
+			})
+		}
+		Prom.race([task1(),task2(),task3()]).then(function(data){
+			alert('success:'+data)
+		}).catch(function(data){
+			alert('fail:'+data)
+		})
+		</pre>
+		<div>
+			<button onclick="baseTest4()">Try it</button>
+		</div>
+	</div>
+	<div class="section">
+		<div class="title">Prom.each usage</div>
+		<pre>
+		function task1(){
+			return new Prom(function(resolve,reject){
+				setTimeout(function(){
+					resolve('A');
+				},2000)
+			})
+		}
+		function task2(){
+			return new Prom(function(resolve,reject){
+				setTimeout(function(){
+					resolve('B');
+				},3000)
+			})
+		}
+		function task3(){
+			return new Prom(function(resolve,reject){
+				setTimeout(function(){
+					resolve('C');
+				},4000)
+			})
+		}
+		Prom.each([task1,task2,task3]).then(function(dataList){
+			alert('success:'+dataList)
+		}).catch(function(data){
+			alert('fail:'+data)
+		})
+		</pre>
+		<div>
+			<button onclick="baseTest5()">Try it</button>
+		</div>
+	</div>
+</div>
+<script src="./Prom.js"></script>
+<script>
+	function baseTest(){
+		new Prom(function(resolve,reject){
+			setTimeout(function(){
+				resolve('A');
+			},2000)
+		}).then(function(data){
+			alert('success:'+data)
+		}).catch(function(data){
+			alert('fail:'+data)
+		})
+	}
+	function baseTest2(){
+		new Prom(function(resolve,reject){
+			setTimeout(function(){
+				reject('A');
+			},2000)
+		}).then(function(data){
+			alert('success:'+data)
+		}).catch(function(data){
+			alert('fail:'+data)
+		})
+	}
+	function task1(){
+		return new Prom(function(resolve,reject){
+			setTimeout(function(){
+				resolve('A');
+			},2000)
+		})
+	}
+	function task2(){
+		return new Prom(function(resolve,reject){
+			setTimeout(function(){
+				resolve('B');
+			},3000)
+		})
+	}
+	function task3(){
+		return new Prom(function(resolve,reject){
+			setTimeout(function(){
+				resolve('C');
+			},4000)
+		})
+	}
+	function baseTest3(){
+		Prom.all([task1(),task2(),task3()]).then(function(dataList){
+			alert(dataList)
+		}).catch(function(data){
+			alert(data)
+		})
+	}
+	function baseTest4(){
+		Prom.race([task1(),task2(),task3()]).then(function(data){
+			alert('success:'+data)
+		}).catch(function(data){
+			alert('fail:'+data)
+		})
+	}
+	function baseTest5(){
+		Prom.each([task1,task2,task3]).then(function(dataList){
+			alert('success:'+dataList)
+		}).catch(function(data){
+			alert('fail:'+data)
+		})
+	}
+</script>
+</body>
+</html>
