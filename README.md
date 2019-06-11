@@ -1,5 +1,5 @@
 # prom.js
-Enhanced version of promise, also a polyfill for promise
+Enhanced version of Promise, also a polyfill for Promise.
 
 <h2>What?</h2>
 Prom covers all the features of Promise, but also extend extra features.<br>
