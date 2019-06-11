@@ -66,7 +66,33 @@
 		</div>
 	</div>
 	<div class="section">
-		<div class="title">Prom.all usage</div>
+		<div class="title">Prom.resolve</div>
+		<pre>
+		Prom.resolve("Hello").then(function(data){
+			alert('success:'+data)
+		}).catch(function(){
+			alert('fail:'+data)
+		})
+		</pre>
+		<div>
+			<button onclick="baseTest6()">Try it</button>
+		</div>
+	</div>
+	<div class="section">
+		<div class="title">Prom.reject</div>
+		<pre>
+		Prom.reject("Not bad").then(function(data){
+			alert('success:'+data)
+		}).catch(function(data){
+			alert('fail:'+data)
+		})
+		</pre>
+		<div>
+			<button onclick="baseTest7()">Try it</button>
+		</div>
+	</div>
+	<div class="section">
+		<div class="title">Prom.all</div>
 		<pre>
 		function task1(){
 			return new Prom(function(resolve,reject){
@@ -100,7 +126,7 @@
 		</div>
 	</div>
 	<div class="section">
-		<div class="title">Prom.race usage</div>
+		<div class="title">Prom.race</div>
 		<pre>
 		function task1(){
 			return new Prom(function(resolve,reject){
@@ -134,7 +160,7 @@
 		</div>
 	</div>
 	<div class="section">
-		<div class="title">Prom.each usage</div>
+		<div class="title">Prom.each</div>
 		<pre>
 		function task1(){
 			return new Prom(function(resolve,reject){
@@ -230,6 +256,20 @@
 	function baseTest5(){
 		Prom.each([task1,task2,task3]).then(function(dataList){
 			alert('success:'+dataList)
+		}).catch(function(data){
+			alert('fail:'+data)
+		})
+	}
+	function baseTest6(){
+		Prom.resolve("Hello").then(function(data){
+			alert('success:'+data)
+		}).catch(function(data){
+			alert('fail:'+data)
+		})
+	}
+	function baseTest7(){
+		Prom.reject("Not bad").then(function(data){
+			alert('success:'+data)
 		}).catch(function(data){
 			alert('fail:'+data)
 		})
