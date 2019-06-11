@@ -29,7 +29,7 @@
 			this.cb_then=cb_then
 			if(this.state==1){
 				if(this.cb_then){
-					this.cb_then(this.arg_resolve)
+					this.arg_resolve=this.cb_then(this.arg_resolve)
 				}
 			}		
 			return this
@@ -38,7 +38,7 @@
 			this.cb_catch=cb_catch
 			if(this.state==2){
 				if(this.cb_catch){
-					this.cb_catch(this.arg_reject)
+					this.arg_reject=this.cb_catch(this.arg_reject)
 				}
 			}
 			return this
@@ -54,9 +54,13 @@
 			  set:function(val){
 				  state=val;
 				  if(val==1){
-					  this.cb_then&&this.cb_then(this.arg_resolve)
+					  if(this.cb_then){
+						  this.arg_resolve=this.cb_then(this.arg_resolve)
+					  }
 				  }else{
-					  this.cb_catch&&this.cb_catch(this.arg_reject)
+					  if(this.cb_catch){
+						  this.arg_reject=this.cb_catch(this.arg_reject)
+					  }
 				  }
 			  }
 			})
@@ -94,7 +98,7 @@
 			this.cb_then=cb_then
 			if(this.state==len){
 				if(this.cb_then){
-					this.cb_then(this.arg_resolve)
+					this.arg_resolve=this.cb_then(this.arg_resolve)
 				}
 			}		
 			return this
@@ -103,7 +107,7 @@
 			this.cb_catch=cb_catch
 			if(this.state<0){
 				if(this.cb_catch){
-					this.cb_catch(this.arg_reject)
+					this.arg_reject=this.cb_catch(this.arg_reject)
 				}
 			}
 			return this
@@ -133,10 +137,14 @@
 				  if(!finish){
 					  if(val==len){
 						  finish=true;
-						  this.cb_then&&this.cb_then(this.arg_resolve);
+						  if(this.cb_then){
+							  this.arg_resolve=this.cb_then(this.arg_resolve);
+						  }
 					  }else if(val<0){
 						  finish=true;
-						  this.cb_catch&&this.cb_catch(this.arg_reject);
+						  if(this.cb_catch){
+							  this.arg_reject=this.cb_catch(this.arg_reject);
+						  }
 					  }
 				  }
 			  }
@@ -158,7 +166,7 @@
 			this.cb_then=cb_then
 			if(this.state>0){
 				if(this.cb_then){
-					this.cb_then(this.arg_resolve)
+					this.arg_resolve=this.cb_then(this.arg_resolve)
 				}
 			}		
 			return this
@@ -167,7 +175,7 @@
 			this.cb_catch=cb_catch
 			if(this.state<0){
 				if(this.cb_catch){
-					this.cb_catch(this.arg_reject)
+					this.arg_reject=this.cb_catch(this.arg_reject)
 				}
 			}
 			return this
@@ -197,10 +205,14 @@
 				  if(!finish){
 					  if(val>0){
 						  finish=true;
-						  this.cb_then&&this.cb_then(this.arg_resolve);
+						  if(this.cb_then){
+							  this.arg_resolve=this.cb_then(this.arg_resolve);
+						  }
 					  }else if(val<0){
 						  finish=true;
-						  this.cb_catch&&this.cb_catch(this.arg_reject);
+						  if(this.cb_catch){
+							  this.arg_reject=this.cb_catch(this.arg_reject);
+						  }
 					  }
 				  }
 				  
@@ -225,9 +237,9 @@
 		}
 		obj.then=function(cb_then){
 			this.cb_then=cb_then
-			if(this.state>0){
+			if(this.state==len){
 				if(this.cb_then){
-					this.cb_then(this.arg_resolve)
+					this.arg_resolve=this.cb_then(this.arg_resolve)
 				}
 			}		
 			return this
@@ -236,7 +248,7 @@
 			this.cb_catch=cb_catch
 			if(this.state<0){
 				if(this.cb_catch){
-					this.cb_catch(this.arg_reject)
+					this.arg_reject=this.cb_catch(this.arg_reject)
 				}
 			}
 			return this
@@ -278,10 +290,14 @@
 				  if(!finish){
 					  if(val==len){
 						  finish=true;
-						  this.cb_then&&this.cb_then(this.arg_resolve);
+						  if(this.cb_then){
+							  this.arg_resolve=this.cb_then(this.arg_resolve);
+						  }
 					  }else if(val<0){
 						  finish=true;
-						  this.cb_catch&&this.cb_catch(this.arg_reject);
+						  if(this.cb_catch){
+							  this.arg_reject=this.cb_catch(this.arg_reject);
+						  }
 					  }
 				  }
 				  
