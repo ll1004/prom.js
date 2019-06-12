@@ -11,4 +11,4 @@ Prom.resolve(value);<br>
 Prom.each(iterable);<br>
 <i>You could see details in demo please.</i><br>
 <h2>Why?</h2>
-Prom is more concise and powerful. You could not only use extra features, but also comprehend the internal implementation principle.
+Prom is more concise and powerful. Not only full features, but better browser compatibility.
