@@ -1,6 +1,6 @@
 # prom.js
-Enhanced version of Promise, also a polyfill for Promise.
-![](https://img.shields.io/badge/version-1.0.1-brightgreen.svg)![](https://img.shields.io/badge/author-Alley%20Luo-blue.svg)
+Enhanced version of Promise, also a polyfill for Promise.<br>
+![](https://img.shields.io/badge/version-1.0.1-brightgreen.svg) ![](https://img.shields.io/badge/author-Alley%20Luo-blue.svg)
 <h2>What?</h2>
 Prom covers all the features of Promise, but also extend extra features.<br>
 new Prom( function(resolve, reject) {...} /* executor */  );<br>
