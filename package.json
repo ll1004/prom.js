@@ -1,0 +1,23 @@
+{
+  "name": "prom",
+  "version": "1.0.1",
+  "description": "Enhanced version of Promise, also a polyfill for Promise.",
+  "main": "dist/prom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ll1004/prom.js.git"
+  },
+  "keywords": [
+    "prom",
+    "es6promise"
+  ],
+  "author": "Alley Luo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ll1004/prom.js/issues"
+  },
+  "homepage": "https://github.com/ll1004/prom.js#readme"
+}
