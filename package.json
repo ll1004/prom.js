@@ -1,5 +1,5 @@
 {
-  "name": "prom",
+  "name": "es-prom",
   "version": "1.0.1",
   "description": "Enhanced version of Promise, also a polyfill for Promise.",
   "main": "dist/prom.js",
