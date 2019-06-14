@@ -18,7 +18,13 @@ Prom is more concise and powerful. Not only full features, but also better brows
 <p style="background:#f6f8fa;">
 $ npm install es-prom
 </p>
-### <script> 
+## 使用方法
+### npm安装
+```bash
+npm install vue-mobile-calendar
+```
+
 ```javascript
-<script src='dist/prom.js'></script>
+import Calendar from 'vue-mobile-calendar'
+Vue.use(Calendar);
 ```
