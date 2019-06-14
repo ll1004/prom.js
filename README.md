@@ -14,10 +14,10 @@ Prom.each(iterable);<br>
 <h2>Why?</h2>
 Prom is more concise and powerful. Not only full features, but also better browser compatibility.
 <h2>How?</h2>
-### npm
-```bash
+<h3>npm</h3>
+<p>
 $ npm install es-prom
-```
+</p>
 ### <script> 
 ```javascript
 <script src='dist/prom.js'></script>
