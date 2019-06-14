@@ -18,6 +18,9 @@ Prom is more concise and powerful. Not only full features, but also better brows
 ```bash
 $ npm install es-prom
 ```
+```javascript
+import Prom from 'es-prom'
+```
 ### <script>
 ```bash
 <script src="dist/prom.js"></script>
