@@ -13,18 +13,11 @@ Prom.each(iterable);<br>
 <i>You could see more details in demo please.</i><br>
 <h2>Why?</h2>
 Prom is more concise and powerful. Not only full features, but also better browser compatibility.
-<h2>How?</h2>
-<h3>npm</h3>
-<p style="background:#f6f8fa;">
-$ npm install es-prom
-</p>
-## 使用方法
-### npm安装
+## How?
+### npm
 ```bash
-npm install vue-mobile-calendar
+$ npm install es-prom
 ```
-
 ```javascript
-import Calendar from 'vue-mobile-calendar'
-Vue.use(Calendar);
+import Prom from 'es-prom'
 ```
