@@ -15,9 +15,7 @@ Prom.each(iterable);<br>
 Prom is more concise and powerful. Not only full features, but also better browser compatibility.
 ## How?
 ### npm
-```bash
-$ npm install es-prom
-```
+
 ```javascript
 import Prom from 'es-prom'
 ```
