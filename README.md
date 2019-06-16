@@ -10,7 +10,7 @@ Prom.race(iterable);<br>
 Prom.reject(reason);<br>
 Prom.resolve(value);<br>
 Prom.each(iterable);<br>
-<i>You could see more details in [DEMO](https://ll1004.github.io/prom.js/demo/example.html)， please.</i><br>
+<i>You could see more details in [DEMO](https://ll1004.github.io/prom.js/demo/example.html).</i><br>
 ## Why?
 Prom is more concise and powerful. Not only full features, but also better browser compatibility.
 ## How?
