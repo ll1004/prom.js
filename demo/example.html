@@ -5,20 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>Just Test</title>
    <style>
-   html,body{
+	html,body{
 		background:#eee;
-   }
-   body{
-	   margin:0;
-	   padding:0;
-	   min-width:800px;
-   }
-   .section{
+	}
+	body{
+		margin:0;
+		padding:0;
+
+	}
+	.page{
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+	}
+	.section{
 		width:50%;
-		margin:10px auto;
+		margin:10px 0;
 		background:#fff;
 		padding:1em;
-   }
+	}
 	.title{
 		font-size:20px;
 		font-weight:bold;
@@ -26,7 +31,17 @@
 		color:#4284f3;
 		padding-bottom:20px;
 	}
-
+	@media screen and (max-width:414px){
+		.section{
+			width:100%;
+		}
+		.title{
+			text-align:center;
+		}
+		.section>div:last-child{
+			text-align:center;
+		}
+	}
    </style>
 
 </head>
