@@ -70,7 +70,6 @@
 		return this
 	}
 	Prom.version = "1.0.1";
-	Prom.max_fail_minus_num = 1e3;
 	Prom.resolve = function (arg) {
 		var obj = new this();
 		obj.resolve(arg);
