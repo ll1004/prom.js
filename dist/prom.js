@@ -123,7 +123,7 @@
 					obj.state++;
 				}).catch(function (data) {
 					obj.arg_reject = data;
-					obj.state -= Prom.max_fail_minus_num;
+					obj.state = -1;
 				})
 			})
 		}
@@ -271,7 +271,7 @@
 					cb && cb();
 				}).catch(function (data) {
 					obj.arg_reject = data;
-					obj.state -= Prom.max_fail_minus_num;
+					obj.state = -1;
 				})
 			}
 			listFun.push(tmp)
