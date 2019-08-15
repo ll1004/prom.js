@@ -29,7 +29,9 @@
 			this.cb_then = cb_then
 				if (this.state == 1) {
 					if (this.cb_then) {
-						this.arg_resolve = this.cb_then(this.arg_resolve)
+						setTimeout(function(){
+							this.arg_resolve = this.cb_then(this.arg_resolve)
+						}.bind(this))
 					}
 				}
 				return this
@@ -38,7 +40,9 @@
 			this.cb_catch = cb_catch
 				if (this.state == 2) {
 					if (this.cb_catch) {
-						this.arg_reject = this.cb_catch(this.arg_reject)
+						setTimeout(function(){
+							this.arg_reject = this.cb_catch(this.arg_reject)
+						}.bind(this))
 					}
 				}
 				return this
